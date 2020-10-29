@@ -5,7 +5,7 @@
         -----------------------------------------------------------------
            Problem Statement :
         -----------------------------------------------------------------
-        | Binary Search:											    |
+        | Binary Search:                                                |
         | 1. Search an element                                          |
         | 2. Print all steps of searching                               |
         | 3. Print the total number of setps                            |

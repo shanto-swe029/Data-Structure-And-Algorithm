@@ -2,50 +2,47 @@
 
 typedef struct {
 private:
-	int ara[100];
+	int ara[1000000];
 
 public:
 	int push( int item ) {
-		if( top == 100 ) return 0;
-		ara[top] = item;
-		top++;
+		if( size == 1000000 ) return 0;
+		ara[size] = item;
+		size++;
 		return 1;
 	}
 	int pop() {
-		if( top == 0 ) return 0;
-		top--;
+		if( size == 0 ) return 0;
+		size--;
 		return 1;
 	}
-	int topValue() {
-		return ara[top - 1];
+	int top() {
+		return ara[size - 1];
 	}
 	int isEmpty() {
-		return ( top == 0 );
+		return ( size == 0 );
 	}
-	int top = 0;
+	int size = 0;
 } stack;
 
 int main()
 {
-	stack myStack;			printf("top = %d\n", myStack.top);
-  
-	myStack.push( 10 );		printf("top = %d\n", myStack.top);
-	myStack.push( 20 );		printf("top = %d\n", myStack.top);
-	myStack.push( 30 );		printf("top = %d\n", myStack.top);
-	myStack.push( 40 );		printf("top = %d\n", myStack.top);
-	myStack.push( 50 );		printf("top = %d\n", myStack.top);
-	myStack.push( 60 );		printf("top = %d\n", myStack.top);
-	myStack.push( 70 );		printf("top = %d\n", myStack.top);
-	myStack.push( 80 );		printf("top = %d\n", myStack.top);
-	myStack.push( 90 );		printf("top = %d\n", myStack.top);
+	stack myStack;			printf( "size = %d\n", myStack.size );
+	myStack.push( 10 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 20 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 30 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 40 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 50 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 60 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 70 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 80 );		printf( "size = %d\n", myStack.size );
+	myStack.push( 90 );		printf( "size = %d\n", myStack.size );
 
 	while( !myStack.isEmpty() ) {
-		printf( "%d ", myStack.topValue() );
+		printf( "%d ", myStack.top() );
 		myStack.pop();
 	}
-	printf("\n");
+	printf( "\n" );
 
-	printf("top = %d\n", myStack.top);
-	
-	return 0;
+	printf( "size = %d\n", myStack.size );
 }

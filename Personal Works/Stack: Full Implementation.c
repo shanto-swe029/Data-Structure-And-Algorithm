@@ -1,3 +1,11 @@
+/*
+	                                 STACK : FULL IMPLEMENTATION
+	---------------------------------------------------------------------------------------------
+	Here is the full implementation of STACK using STRUCTURE in C Programming Language. This is a
+	full functional stack structure. You can use it like std::stack of C++ Programming Language.
+	---------------------------------------------------------------------------------------------
+*/
+
 #include <stdio.h>
 
 typedef struct {

@@ -1,10 +1,10 @@
 /*
 	                                 STACK : FULL IMPLEMENTATION
-	---------------------------------------------------------------------------------------------
-	Here is the full implementation of STACK using STRUCTURE in C Programming Language. This is a
+	-----------------------------------------------------------------------------------------------
+	Here is the full implementation of STACK using STRUCTURE in C++ Programming Language. This is a
 	full functional stack structure. You can use it like 'std::stack < int > ' of C++ Programming 
 	Language. For using this stack in more data types, you can see my advanced implementation.
-	---------------------------------------------------------------------------------------------
+	-----------------------------------------------------------------------------------------------
 */
 
 #include <stdio.h>

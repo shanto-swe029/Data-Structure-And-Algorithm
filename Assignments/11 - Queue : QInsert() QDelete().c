@@ -1,3 +1,16 @@
+/*
+                        -- Course Name : Data Structure --
+                        -- Course No   : SWE127, SWE128 --
+                        -- Problem No  : 011            --
+        -----------------------------------------------------------------
+           Problem Statement :
+        -----------------------------------------------------------------
+        | Queue:                                                        |
+        | 1. QInsert() function                                         |
+        | 2. QDelete() function                                         |
+        -----------------------------------------------------------------
+*/
+
 #include <stdio.h>
 
 int Queue[100000];
@@ -49,17 +62,27 @@ int main()
 {
 	maxQueueSize = 5;
 
-	QInsert( 10 );
-	QInsert( 20 );
-	QInsert( 30 );
-	QInsert( 40 );
-	QInsert( 50 );
-	QInsert( 60 );
+	QInsert( 'A' );
+	QInsert( 'B' );
+	QInsert( 'C' );	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
 
-	printf("%d\n", QDelete());
-	printf("%d\n", QDelete());
-	printf("%d\n", QDelete());
-	printf("%d\n", QDelete());
-	printf("%d\n", QDelete());
-	printf("%d\n", QDelete());
+	QInsert( 'D' );
+	QInsert( 'E' );	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+
+	QInsert( 'F' );	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+
+	QInsert( 'G' );
+	QInsert( 'H' );	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+
+	QInsert( 'K' );	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+	printf("%c\n", QDelete());	printf("FRONT: %d\tREAR: %d\n", Front + 1, Rear + 1);
+
 }

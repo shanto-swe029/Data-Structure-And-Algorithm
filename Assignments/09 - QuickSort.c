@@ -47,11 +47,6 @@ void QUICKSORT( int ara[], int low, int high )
 
 int main()
 {
-	#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-	#endif
-	
 	int data[] = {44, 33, 11, 55, 77, 90, 40, 60, 99, 22, 88, 66};
  	int n = sizeof(data) / sizeof(data[0]);
  	QUICKSORT(data, 0, n - 1);

@@ -110,10 +110,20 @@ void DELETE(char s[], int p, int length)
     strcpy(s, temp);        // copying temporary string to the given string pointer
 }
 
+void CONCAT(char s1[], char s2[])
+{
+	strcat(s1, s2);
+}
+
 void menu();
 
 int main() 
 {
+    #ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+
     int n;
     menu();
     
@@ -201,6 +211,18 @@ int main()
             
             printf("Your desired string = %s\n\n", s);
         }
+        else if (n == 7) {
+        	char s1[500];
+        	char s2[500];
+        	getchar();
+        	printf("String1 = ");
+        	gets(s1);
+        	printf("String2 = ");
+        	gets(s2);
+        	CONCAT(s1, s2);
+
+        	printf("Your desired string = %s\n\n", s1);
+        }
         else {
             printf("Invalid Input.\n\n");
         }
@@ -219,6 +241,7 @@ void menu()         // creating a guiding menu
     printf("3. INDEX(text, pattern)\n");
     printf("4. INSERT(text, position, string)\n");
     printf("5. DELETE(String, position, length)\n");
-    printf("6. REPLACE(text, pattern1, pattern2)\n\n");
+    printf("6. REPLACE(text, pattern1, pattern2)\n");
+    printf("7. CONCAT(String1, String2)\n\n");
     printf("Enter your choice: ");
 }

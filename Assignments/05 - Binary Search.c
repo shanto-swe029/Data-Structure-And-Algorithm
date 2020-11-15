@@ -12,27 +12,38 @@
         -----------------------------------------------------------------
 */
 
-#include <stdio.h>
-
-int main()
+int BinarySearch ( int DATA[], int LB, int UB, int ITEM )
 {
-	int DATA[13] = { 11, 22, 30, 33, 40, 44, 55, 60, 66, 77, 80, 88, 99 };
-	int item = 85, location, total_steps = 0;
-	int begin = 0, end = 12, mid = ( int ) ( begin + end ) / 2;
-	while( ( begin <= end ) && ( DATA[mid] != item ) ) {
+	int BEG = LB, END = UB, MID;
+	
+	while( BEG <= END ) {
+		MID = ( int ) ( BEG + END ) / 2;
+		
 		// printing each steps
 		printf("Step-%d\n", ++total_steps);
 		printf("Begin = %d\n", begin);
 		printf("End = %d\n", end);
 		printf("Mid = %d\n\n", mid);
 
-		if( item < DATA[mid] ) {
-			end = mid - 1;
+		if ( ITEM < DATA[MID] ) {
+			END  = MID - 1;
+		}
+		else if ( ITEM > DATA[MID] ) {
+			BIG = MID + 1;
 		}
 		else {
-			begin = mid + 1;
+			// printing last step when needed
+			if( begin <= end ) {
+				printf("Step-%d\n", ++total_steps);
+				printf("Begin = %d\n", begin);
+				printf("End = %d\n", end);
+				printf("Mid = %d\n\n", mid);
+			}
+
+			// printing the number of steps
+			printf("Total Steps : %d\n\n", total_steps);
+			return MID;
 		}
-		mid = ( int ) ( begin + end ) /2;
 	}
 	// printing last step when needed
 	if( begin <= end ) {
@@ -44,14 +55,24 @@ int main()
 
 	// printing the number of steps
 	printf("Total Steps : %d\n\n", total_steps);
-
-	if ( DATA[mid] == item ) {
-		location = mid;
-		printf("%d is found at index %d\n", item, location);
-	}
-	else {
-		location = -1;
-		printf("%d not found.\n", item);
-	}
-	return 0;
+	return -1;
 }
+
+int main()
+{
+    int ara[] = { 11, 22, 30, 33, 40, 44, 55, 60, 66, 77, 80, 88, 99 };
+    int item = 88;
+    int lowerBound = 0;
+    int upperBound = 12;
+    int index = BinarySearch( ara, lowerBound, upperBound, item );
+
+    if( index == -1 ) {
+        printf("Item Not Found\n");
+    } else {
+        printf("%d is found at index %d\n", item, index);
+    }
+
+     return 0;
+}
+
+//ALHAMDULILLAH

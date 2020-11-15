@@ -11,33 +11,34 @@
         | 3. Print the total number of setps                            |
         -----------------------------------------------------------------
 */
+#include <stdio.h>
 
 int BinarySearch ( int DATA[], int LB, int UB, int ITEM )
 {
-	int BEG = LB, END = UB, MID;
+	int BEG = LB, END = UB, MID, total_steps = 0;
 	
 	while( BEG <= END ) {
 		MID = ( int ) ( BEG + END ) / 2;
 		
 		// printing each steps
 		printf("Step-%d\n", ++total_steps);
-		printf("Begin = %d\n", begin);
-		printf("End = %d\n", end);
-		printf("Mid = %d\n\n", mid);
+		printf("Begin = %d\n", BEG);
+		printf("End = %d\n", END);
+		printf("Mid = %d\n\n", MID);
 
 		if ( ITEM < DATA[MID] ) {
 			END  = MID - 1;
 		}
 		else if ( ITEM > DATA[MID] ) {
-			BIG = MID + 1;
+			BEG = MID + 1;
 		}
 		else {
 			// printing last step when needed
-			if( begin <= end ) {
+			if( BEG <= END ) {
 				printf("Step-%d\n", ++total_steps);
-				printf("Begin = %d\n", begin);
-				printf("End = %d\n", end);
-				printf("Mid = %d\n\n", mid);
+				printf("Begin = %d\n", BEG);
+				printf("End = %d\n", END);
+				printf("Mid = %d\n\n", MID);
 			}
 
 			// printing the number of steps
@@ -46,11 +47,11 @@ int BinarySearch ( int DATA[], int LB, int UB, int ITEM )
 		}
 	}
 	// printing last step when needed
-	if( begin <= end ) {
+	if( BEG <= END ) {
 		printf("Step-%d\n", ++total_steps);
-		printf("Begin = %d\n", begin);
-		printf("End = %d\n", end);
-		printf("Mid = %d\n\n", mid);
+		printf("Begin = %d\n", BEG);
+		printf("End = %d\n", END);
+		printf("Mid = %d\n\n", MID);
 	}
 
 	// printing the number of steps

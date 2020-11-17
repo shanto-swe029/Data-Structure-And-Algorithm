@@ -165,7 +165,6 @@ int main()
 			i++;
 			index++;
 		}
-		i++;
 	}
 	// printing analysed user input
 	printf("Input (The Infix Expression): \n");

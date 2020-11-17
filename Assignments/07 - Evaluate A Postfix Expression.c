@@ -49,7 +49,7 @@ int stoi ( char s[] ) {	// string to integer
 	return n;
 }
 
-double evaluatePostfixExpression( char** expression )
+double evaluatePostfixExpression( char expression[10][10] )
 {
 	int i = 0;
 	double A, B, result;

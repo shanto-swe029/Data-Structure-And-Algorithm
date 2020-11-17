@@ -12,11 +12,11 @@
 #include <stdio.h>
 #include <string.h>
 
-int Stack[100000];
+double Stack[100000];
 int TOP = -1;
 int maxStk = 100000;
 
-int push( int item )
+int push( double item )
 {
 	if( TOP == maxStk - 1 ) {
 		printf("Overflow\n");
@@ -49,11 +49,10 @@ int stoi ( char s[] ) {	// string to integer
 	return n;
 }
 
-double evaluatePostfixExpression( char expression[1000][10] )
+double evaluatePostfixExpression( char** expression )
 {
 	int i = 0;
 	double A, B, result;
-	printf("Steps: \n");
 	while( strcmp( expression[i], ")" ) != 0 ) {
 		char sign = expression[i][0];
 		if( sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^' ) {
@@ -68,15 +67,14 @@ double evaluatePostfixExpression( char expression[1000][10] )
 				for( int i = 0; i < A; i++ ) result *= B;
 			}
 			push( result );
-			printf("%lf %s %lf = %lf\n", B, expression[i], A, result);
 		}
 		else {
-			int x = stoi( expression[i] );
+			double x = (double) stoi( expression[i] );
 			push( x );
 		}
 		i++;
 	}
-	int res = Stack[TOP];
+	double res = Stack[TOP];
 	pop();
 	printf("\n");
 	return res;

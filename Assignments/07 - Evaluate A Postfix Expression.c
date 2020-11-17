@@ -49,15 +49,16 @@ int stoi ( char s[] ) {	// string to integer
 	return n;
 }
 
-int evaluatePostfixExpression( char expression[10][10] )
+double evaluatePostfixExpression( char expression[1000][10] )
 {
-	int i = 0, A, B, result;
+	int i = 0;
+	double A, B, result;
 	printf("Steps: \n");
 	while( strcmp( expression[i], ")" ) != 0 ) {
 		char sign = expression[i][0];
 		if( sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^' ) {
-			A = Stack[TOP]; pop();
-			B = Stack[TOP]; pop();
+			A = (double) Stack[TOP]; pop();
+			B = (double) Stack[TOP]; pop();
 			if( expression[i][0] == '+' ) result = B + A;
 			else if( expression[i][0] == '-' ) result = B - A;
 			else if( expression[i][0] == '*' ) result = B * A;
@@ -67,7 +68,7 @@ int evaluatePostfixExpression( char expression[10][10] )
 				for( int i = 0; i < A; i++ ) result *= B;
 			}
 			push( result );
-			printf("%d %s %d = %d\n", B, expression[i], A, result);
+			printf("%lf %s %lf = %lf\n", B, expression[i], A, result);
 		}
 		else {
 			int x = stoi( expression[i] );
@@ -85,5 +86,5 @@ int main()
 {
 	char expression[10][10] = { "5", "6", "2", "+", "*", "12", "4", "/", "-", ")" };
 
-	printf( "Result : %d\n", evaluatePostfixExpression(expression) );
+	printf( "Result : %lf\n", evaluatePostfixExpression(expression) );
 }

@@ -236,7 +236,7 @@ int main()
 	}
 	printf("\n\n\n");
 
-    convertInfixToPostfix( infix, postfix, index );
+	convertInfixToPostfix( infix, postfix, index );
 
 	int i = 0;
 	printf("Output (The Postfix Expression):\n");
@@ -249,5 +249,5 @@ int main()
 
 	printf( "Result : %lf\n", evaluatePostfixExpression(postfix) );
 
-    return 0;
+	return 0;
 }

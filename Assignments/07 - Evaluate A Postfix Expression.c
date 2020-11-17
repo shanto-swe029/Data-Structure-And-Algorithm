@@ -53,6 +53,7 @@ double evaluatePostfixExpression( char** expression )
 {
 	int i = 0;
 	double A, B, result;
+	printf("Steps: \n");
 	while( strcmp( expression[i], ")" ) != 0 ) {
 		char sign = expression[i][0];
 		if( sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^' ) {
@@ -67,6 +68,7 @@ double evaluatePostfixExpression( char** expression )
 				for( int i = 0; i < A; i++ ) result *= B;
 			}
 			push( result );
+			printf("%lf %s %lf = %lf\n", B, expression[i], A, result);
 		}
 		else {
 			double x = (double) stoi( expression[i] );

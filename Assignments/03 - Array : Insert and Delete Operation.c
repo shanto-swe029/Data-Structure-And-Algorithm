@@ -74,12 +74,12 @@ int main()
 		printf("Element Not Found.\n");
 	else {
 		printf("Succeddfully deleted %d.\n", x);
-		for(int i = indx; i < n-1; i++) {
+		for(int i = indx; i < n; i++) {
 			ara[i] = ara[i+1];
 		}
 		// printing the new array
 		printf("\nYour new array is: \n");
-		for(int i = 0; i < n-1; i++)
+		for(int i = 0; i < n; i++)
 			printf("%d ", ara[i]);
 		printf("\n");
 	}

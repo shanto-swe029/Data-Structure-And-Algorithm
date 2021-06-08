@@ -17,12 +17,34 @@
 
 #include <stdio.h>
 
-int ara[11] = {-100000000, 1, 6, 3, 8, 4, 6, 8, 3, 9, 1};
-int araCopy[11] = {100000000, 1, 6, 3, 8, 4, 6, 8, 3, 9, 1};
+int ara[11]     = {-100000000, 1, 6, 3, 8, 4, 6, 8, 3, 9, 1};
+int araCopy[11] = { 100000000, 1, 6, 3, 8, 4, 6, 8, 3, 9, 1};
+
+void printStep ( int stepNumber )
+{
+	printf( "Step %2d: ", stepNumber );
+	for( int i = 1; i <= stepNumber; i++ )
+	{
+		printf( "%d ", ara[i] );
+	}
+	printf( "\n" );
+}
+
+void printStep2 ( int stepNumber )
+{
+	printf( "Step %2d: ", stepNumber );
+	for( int i = 1; i <= stepNumber; i++ )
+	{
+		printf( "%d ", araCopy[i] );
+	}
+	printf( "\n" );
+}
 
 void InsertionSort_NonDecreasing ( int n )
 {
 	ara[0] = -100000000;
+
+	printStep( 1 );
 
 	for ( int k = 2; k <= n; k++ )
 	{
@@ -34,6 +56,7 @@ void InsertionSort_NonDecreasing ( int n )
 			ptr--;
 		}
 		ara[ptr + 1] = temp;
+		printStep( k );
 	}
 
 	return;
@@ -42,6 +65,8 @@ void InsertionSort_NonDecreasing ( int n )
 void InsertionSort_NonIncreasing ( int n )
 {
 	araCopy[0] = 100000000;
+
+	printStep2( 1 );
 
 	for( int k = 2; k <= n; k++ )
 	{
@@ -53,6 +78,8 @@ void InsertionSort_NonIncreasing ( int n )
 			ptr--;
 		}
 		araCopy[ptr + 1] = temp;
+
+		printStep2( k );
 	}
 
 	return;
@@ -64,7 +91,7 @@ int main()
 
 	InsertionSort_NonDecreasing( n );
 
-	printf("Non-Decreasing Order: \n");
+	printf("\nNon-Decreasing Order: \n");
 	for( int i = 1; i <= n; i++ )
 	{
 		printf("%d ", ara[i]);
@@ -77,7 +104,7 @@ int main()
 
 	InsertionSort_NonIncreasing( n );
 
-	printf("Non-Increasing Order: \n");
+	printf("\nNon-Increasing Order: \n");
 	for( int i = 1; i <= n; i++ )
 	{
 		printf("%d ", araCopy[i]);

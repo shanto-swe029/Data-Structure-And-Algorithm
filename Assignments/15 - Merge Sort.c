@@ -19,7 +19,7 @@
 
 void printArray(int ara[], int l, int r)
 {
-    int i;
+	int i;
 	for (i = l; i <= r; i++) printf("%d ",ara[i]);
 	printf("\n");
 }
@@ -27,11 +27,11 @@ void printArray(int ara[], int l, int r)
 void merge_NonDecreasing( int ara[], int l, int m, int r )
 {
 	printf("[%d, %d] = ", l+1, m+1);
-    printArray(ara, l, m);
-    printf("[%d, %d] = ", m+2, r+1);
-    printArray(ara, m+1, r);
+	printArray(ara, l, m);
+    	printf("[%d, %d] = ", m+2, r+1);
+    	printArray(ara, m+1, r);
 
-    int i, j, k;
+    	int i, j, k;
 	int n1 = m - l + 1;
 	int n2 = r - m;
 

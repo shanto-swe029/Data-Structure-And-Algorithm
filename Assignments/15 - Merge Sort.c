@@ -11,7 +11,7 @@
 	   Complexity :
         -----------------------------------------------------------------
         | Worst Case Complexity   : O( n * log(n) )                     |
-		| Average Case Complexity : O( n * log(n) )                     |
+	| Average Case Complexity : O( n * log(n) )                     |
         -----------------------------------------------------------------
 */
 
